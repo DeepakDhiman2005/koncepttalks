@@ -6,8 +6,11 @@ import { FaArrowRightLong } from "react-icons/fa6";
 // components
 import MyButton from "../../components/buttons/MyButton";
 import WorkAnimation from "../../animations/WorkAnimation";
+import usePath from "../../hooks/usePath";
 
 const Introduction = () => {
+    const path = usePath();
+
     return <>
         <div className="flex flex-col justify-center h-[500px] overflow-hidden relative px-3 gap-y-4 sm:px-5 md:px-10 items-start">
             <div className="absolute -right-4 -top-6">
@@ -28,7 +31,9 @@ const Introduction = () => {
                 Contact Us
             </MyButton>
 
-            <button className="flex justify-center transition-all hover:text-gray-700 items-center gap-x-2 my-text ">
+            <button className="flex justify-center transition-all hover:text-gray-700 items-center gap-x-2 my-text "
+                onClick={() => path.navigate("/koncepttalks-demo")}
+            >
                 Schedule Free Demo
                 <FaArrowRightLong size={18} />
             </button>
